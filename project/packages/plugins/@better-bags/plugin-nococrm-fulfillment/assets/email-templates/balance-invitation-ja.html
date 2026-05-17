@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>残金お支払いのご案内 - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'Hiragino Sans','Yu Gothic UI',sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">{{customer.primary_contact}} 様</h2>
+
+  <p>ご注文 <strong>{{order.order_no}}</strong> の最終社内品質検査（AQL 2.5 抜取検査）が完了し、出荷準備が整いましたことをご報告いたします。</p>
+
+  <h3 style="color:#1565c0;">注文情報</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:160px;">注文番号</td><td style="padding:10px 14px;"><strong>{{order.order_no}}</strong></td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">お客様 PO 番号</td><td style="padding:10px 14px;">{{order.customer_po_no}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">商品</td><td style="padding:10px 14px;">{{order.product_name}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">数量</td><td style="padding:10px 14px;">{{order.quantity}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">合計金額</td><td style="padding:10px 14px;"><strong>{{order.total}} {{order.currency.code}}</strong></td></tr>
+  </table>
+
+  <h3 style="color:#1565c0;">残金お支払い詳細</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#fff8e1;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:160px;">残金</td><td style="padding:10px 14px;"><strong>{{payment.amount}} {{payment.currency.code}}</strong>（合計の 70%）</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">お支払い期日</td><td style="padding:10px 14px;">{{payment.due_date}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">お支払い方法</td><td style="padding:10px 14px;">T/T 電信送金（口座情報は添付 PI をご参照）</td></tr>
+  </table>
+
+  <p style="background:#e3f2fd;padding:12px 16px;border-left:3px solid #1565c0;">
+    <strong>備考</strong>：残金入金確認後、1-2 営業日以内に船積予約を手配いたします。全ての船積書類（商業送り状 / 梱包明細書 / 原産地証明書）が整い次第、B/L 番号と ETA をメールでご連絡いたします。
+  </p>
+
+  <p style="margin-top:32px;">QC レポート、不良写真、梱包詳細などご希望の場合は、本メールへご返信ください。</p>
+
+  <p>
+    <strong>{{user.nickname}}</strong><br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">メール: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">このメールは NocoCRM から自動送信されています。</p>
+</body>
+</html>

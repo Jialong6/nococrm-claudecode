@@ -39,7 +39,9 @@ nocoCRM-ClaudeCode/
 | **M8 合同谈判** | negotiations/negotiation_scripts/谈判轮次 ≥ 5 止损 | ✅ **已实施** |
 | **M9 订单确认** | contracts/orders/payments/合同自动建单+定金/定金到账触发排产 | ✅ **已实施** |
 | **M10 生产准备** | materials（14+7+14 时间轴 formula）/production_plans 5 里程碑 | ✅ **已实施** |
-| M11 - M17 | 见 [tasks.md](./tasks.md) | 待续 |
+| **M11 生产与质检** | production_progress（累加 hook）/qc_reports（AQL 2.5）/QC 通过推进订单 | ✅ **已实施** |
+| **M12 发货交付** | shipments/尾款校验（VIP 例外）/文件齐套/状态同步订单 | ✅ **已实施** |
+| M13 - M17 | 见 [tasks.md](./tasks.md) | 待续 |
 
 实施成果按里程碑拆分成独立插件：
 
@@ -48,6 +50,7 @@ nocoCRM-ClaudeCode/
 - M5/M6 → [`project/packages/plugins/@better-bags/plugin-nococrm-quotation/`](./project/packages/plugins/@better-bags/plugin-nococrm-quotation/)
 - M7/M8 → [`project/packages/plugins/@better-bags/plugin-nococrm-followup/`](./project/packages/plugins/@better-bags/plugin-nococrm-followup/)
 - M9/M10 → [`project/packages/plugins/@better-bags/plugin-nococrm-orders/`](./project/packages/plugins/@better-bags/plugin-nococrm-orders/)
+- M11/M12 → [`project/packages/plugins/@better-bags/plugin-nococrm-fulfillment/`](./project/packages/plugins/@better-bags/plugin-nococrm-fulfillment/)
 
 ## 快速启动
 

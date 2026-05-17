@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>尾款付款邀请 - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'PingFang SC','Microsoft YaHei',sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">{{customer.primary_contact}}，您好</h2>
+
+  <p>非常荣幸地通知您，订单 <strong>{{order.order_no}}</strong> 已通过我方最终内部质检（AQL 2.5 抽检），全部产品已具备出货条件。</p>
+
+  <h3 style="color:#1565c0;">订单信息</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:140px;">订单编号</td><td style="padding:10px 14px;"><strong>{{order.order_no}}</strong></td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">客户 PO 号</td><td style="padding:10px 14px;">{{order.customer_po_no}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">产品</td><td style="padding:10px 14px;">{{order.product_name}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">数量</td><td style="padding:10px 14px;">{{order.quantity}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">总金额</td><td style="padding:10px 14px;"><strong>{{order.total}} {{order.currency.code}}</strong></td></tr>
+  </table>
+
+  <h3 style="color:#1565c0;">尾款支付详情</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#fff8e1;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:140px;">尾款金额</td><td style="padding:10px 14px;"><strong>{{payment.amount}} {{payment.currency.code}}</strong>（占总额 70%）</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">应付日期</td><td style="padding:10px 14px;">{{payment.due_date}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">付款方式</td><td style="padding:10px 14px;">T/T 电汇（账户信息见附件 PI）</td></tr>
+  </table>
+
+  <p style="background:#e3f2fd;padding:12px 16px;border-left:3px solid #1565c0;">
+    <strong>说明</strong>：收到尾款后 1-2 个工作日内安排订舱发货；出货文件（商业发票 / 装箱单 / 原产地证）齐备后会通过邮件通知您提单号与 ETA。
+  </p>
+
+  <p style="margin-top:32px;">如需查看 QC 报告 / 缺陷照片 / 装箱细节，请回复此邮件。</p>
+
+  <p>
+    {{user.nickname}}<br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">邮箱: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">本邮件由 NocoCRM 自动发送。</p>
+</body>
+</html>

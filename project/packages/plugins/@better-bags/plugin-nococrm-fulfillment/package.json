@@ -1,0 +1,26 @@
+{
+  "name": "@better-bags/plugin-nococrm-fulfillment",
+  "displayName": "NocoCRM Fulfillment",
+  "displayName.zh-CN": "NocoCRM 生产质检与发货",
+  "description": "Better Bags NocoCRM 生产监控、质检与发货全链路（M11 + M12）",
+  "description.zh-CN": "提供生产进度、质检报告、发货 3 张主表。Hooks：进度累计自动算 / QC 通过推进订单 / 尾款未付不能发货 / 文件齐套校验 / 状态同步 order。",
+  "version": "0.1.0",
+  "main": "dist/server/index.js",
+  "homepage": "https://github.com/Jialong6/nococrm-claudecode",
+  "keywords": [
+    "CRM",
+    "NocoBase",
+    "Better Bags",
+    "QC",
+    "Shipping"
+  ],
+  "peerDependencies": {
+    "@better-bags/plugin-nococrm-core": "0.x",
+    "@better-bags/plugin-nococrm-orders": "0.x",
+    "@nocobase/client": "2.x",
+    "@nocobase/database": "2.x",
+    "@nocobase/server": "2.x",
+    "@nocobase/utils": "2.x"
+  },
+  "license": "AGPL-3.0"
+}

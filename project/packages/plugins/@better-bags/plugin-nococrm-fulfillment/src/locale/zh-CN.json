@@ -1,0 +1,14 @@
+{
+  "NocoCRM Fulfillment": "NocoCRM 生产质检与发货",
+  "Production Progress": "生产进度",
+  "QC Reports": "质检报告",
+  "Shipments": "发货",
+  "AQL Level": "AQL 等级",
+  "Sample Size": "抽检件数",
+  "Critical Defects": "致命缺陷",
+  "Major Defects": "主要缺陷",
+  "Minor Defects": "次要缺陷",
+  "B/L No.": "提单号",
+  "Container Type": "柜型",
+  "Customer Inspection Required": "客户/第三方验厂"
+}
