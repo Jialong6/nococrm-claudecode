@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sample Follow-up - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">Dear {{customer.primary_contact}},</h2>
+
+  <p>Sample <strong>{{sample.sample_no}}</strong> was shipped on <strong>{{sample.shipped_at}}</strong> via <strong>{{sample.courier}}</strong> (tracking no. {{sample.tracking_no}}). We have not yet received confirmation of delivery from you.</p>
+
+  <p>Please confirm receipt at your convenience and share your feedback on the sample.</p>
+
+  <h3 style="color:#1565c0;">Sample Info</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:160px;">Sample Type</td><td style="padding:10px 14px;">{{sample.sample_type}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">Revision</td><td style="padding:10px 14px;">No. {{sample.revision_no}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">Related Quotation</td><td style="padding:10px 14px;">{{sample.quotation.quotation_no}}</td></tr>
+  </table>
+
+  <p style="margin-top:32px;">If revisions are required, please reply with your notes and we will arrange a second round of sampling promptly.</p>
+
+  <p>
+    Best regards,<br>
+    <strong>{{user.nickname}}</strong><br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">Email: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">Automatically sent by NocoCRM.</p>
+</body>
+</html>

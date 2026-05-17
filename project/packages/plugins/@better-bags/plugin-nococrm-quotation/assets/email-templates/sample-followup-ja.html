@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>サンプル到着確認 - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'Hiragino Sans','Yu Gothic UI',sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">{{customer.primary_contact}} 様</h2>
+
+  <p>サンプル <strong>{{sample.sample_no}}</strong> は <strong>{{sample.shipped_at}}</strong> に <strong>{{sample.courier}}</strong>（追跡番号 {{sample.tracking_no}}）にて発送いたしました。お受け取り確認のご連絡をまだいただいておりません。</p>
+
+  <p>お手数ですが、到着確認とサンプル評価のご感想をお知らせいただけますようお願い申し上げます。</p>
+
+  <h3 style="color:#1565c0;">サンプル情報</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:160px;">サンプル種別</td><td style="padding:10px 14px;">{{sample.sample_type}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">バージョン</td><td style="padding:10px 14px;">第 {{sample.revision_no}} 回</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">関連見積</td><td style="padding:10px 14px;">{{sample.quotation.quotation_no}}</td></tr>
+  </table>
+
+  <p style="margin-top:32px;">修正のご要望がございましたら、本メールへご返信ください。速やかに二次サンプルを手配いたします。</p>
+
+  <p>
+    <strong>{{user.nickname}}</strong><br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">メール: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">このメールは NocoCRM から自動送信されています。</p>
+</body>
+</html>

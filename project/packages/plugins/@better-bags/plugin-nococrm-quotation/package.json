@@ -1,0 +1,25 @@
+{
+  "name": "@better-bags/plugin-nococrm-quotation",
+  "displayName": "NocoCRM Quotation",
+  "displayName.zh-CN": "NocoCRM 询盘报价打样",
+  "description": "Better Bags NocoCRM 询盘 → 核价 → 报价 → 打样全链路（M5 + M6）",
+  "description.zh-CN": "覆盖从客户询盘 → 内部核价 → 正式报价 → 打样的完整流程。内置工厂路由、交期下限、付款条款校验、价格底线审批、打样轮次高风险等业务红线。",
+  "version": "0.1.0",
+  "main": "dist/server/index.js",
+  "homepage": "https://github.com/Jialong6/nococrm-claudecode",
+  "keywords": [
+    "CRM",
+    "NocoBase",
+    "Better Bags",
+    "Quotation",
+    "Sample"
+  ],
+  "peerDependencies": {
+    "@better-bags/plugin-nococrm-core": "0.x",
+    "@nocobase/client": "2.x",
+    "@nocobase/database": "2.x",
+    "@nocobase/server": "2.x",
+    "@nocobase/utils": "2.x"
+  },
+  "license": "AGPL-3.0"
+}

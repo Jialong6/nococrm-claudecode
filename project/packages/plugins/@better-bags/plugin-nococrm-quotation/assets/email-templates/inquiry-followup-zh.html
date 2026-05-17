@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>询盘跟进 - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'PingFang SC','Microsoft YaHei',sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">{{customer.primary_contact}}，您好</h2>
+
+  <p>感谢前一次会议的沟通。为了让我们能尽快为您出具准确报价，请确认下列需求细节：</p>
+
+  <h3 style="color:#1565c0;">询盘信息</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:140px;">询盘编号</td><td style="padding:10px 14px;"><strong>{{inquiry.inquiry_no}}</strong></td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">产品分类</td><td style="padding:10px 14px;">{{inquiry.product_category.name}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">数量</td><td style="padding:10px 14px;">{{inquiry.quantity}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">完整度</td><td style="padding:10px 14px;">{{inquiry.completeness_score}} / 100</td></tr>
+  </table>
+
+  <h3 style="color:#1565c0;">还需要您补充的信息</h3>
+  <p>{{inquiry.notes}}</p>
+
+  <p style="background:#fff8e1;padding:12px 16px;border-left:3px solid #f57f17;">
+    <strong>提示</strong>：缅甸大货 MOQ 1500 件起；大货标准交期为 PP 样确认后 90 天。
+    若您是急单或试单，我们可由山东日照工厂承接，30 天起可陆续交货。
+  </p>
+
+  <p style="margin-top:32px;">如有任何疑问，请直接回复此邮件。</p>
+
+  <p>
+    {{user.nickname}}<br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">邮箱: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">本邮件由 NocoCRM 自动发送。</p>
+</body>
+</html>

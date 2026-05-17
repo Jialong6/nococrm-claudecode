@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Quotation {{quotation.quotation_no}} - Better Bags</title>
+<style>
+  @page { size: A4; margin: 15mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; color: #222; margin: 0; }
+  .header { display: flex; justify-content: space-between; border-bottom: 3px solid #1565c0; padding-bottom: 12px; margin-bottom: 24px; }
+  .logo { font-size: 24px; font-weight: bold; color: #1565c0; }
+  .doc-title { font-size: 20px; font-weight: bold; color: #1565c0; text-align: right; }
+  .company-meta { font-size: 12px; color: #666; line-height: 1.6; }
+  .section { margin: 18px 0; }
+  .section-title { font-size: 14px; font-weight: bold; color: #1565c0; border-left: 4px solid #1565c0; padding-left: 8px; margin-bottom: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.kv td { padding: 6px 10px; border-bottom: 1px dashed #ddd; }
+  table.kv td:first-child { color: #666; width: 130px; }
+  table.items th, table.items td { padding: 8px 10px; border: 1px solid #ccc; text-align: left; }
+  table.items th { background: #f0f4fa; }
+  .total-row { background: #fff8e1; font-weight: bold; }
+  .terms { font-size: 12px; line-height: 1.7; color: #444; background: #f9fafc; padding: 12px 16px; border-radius: 4px; }
+  .signature { display: flex; justify-content: space-between; margin-top: 60px; font-size: 12px; }
+  .signature-block { width: 45%; }
+  .signature-line { border-top: 1px solid #333; margin-top: 40px; padding-top: 4px; text-align: center; color: #666; }
+  .footer { margin-top: 40px; font-size: 10px; color: #999; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="logo">Better Bags</div>
+    <div class="company-meta">
+      中缅双工厂 OEM/ODM 箱包制造商<br>
+      山东日照 · 缅甸仰光 NGWE PIN LAI<br>
+      Tel: +86-xxx-xxxx-xxxx · Email: sales@betterbags.example
+    </div>
+  </div>
+  <div>
+    <div class="doc-title">QUOTATION 报价单</div>
+    <div class="company-meta" style="text-align:right;">
+      报价单号: <strong>{{quotation.quotation_no}}</strong><br>
+      版本: v{{quotation.version}}<br>
+      日期: {{quotation.created_at}}<br>
+      有效期至: {{quotation.valid_until}}
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">客户信息 / Bill To</div>
+  <table class="kv">
+    <tr><td>公司名</td><td>{{customer.company_name}}</td></tr>
+    <tr><td>联系人</td><td>{{customer.primary_contact}}</td></tr>
+    <tr><td>邮箱</td><td>{{customer.email}}</td></tr>
+    <tr><td>电话</td><td>{{customer.phone}}</td></tr>
+    <tr><td>国家</td><td>{{customer.country.name_zh}}</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">产品规格 / Product Details</div>
+  <table class="items">
+    <thead>
+      <tr>
+        <th style="width:40px;">#</th>
+        <th>产品 / Description</th>
+        <th style="width:80px;">数量 / Qty</th>
+        <th style="width:90px;">单价 / Unit</th>
+        <th style="width:110px;">总额 / Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>
+          <strong>{{inquiry.product_category.name}} - {{inquiry.product_name}}</strong><br>
+          <span style="font-size:11px;color:#666;">主面料: {{inquiry.material}} · 颜色: {{inquiry.color}}</span>
+        </td>
+        <td style="text-align:right;">{{quotation.quantity}}</td>
+        <td style="text-align:right;">{{quotation.currency.symbol}} {{quotation.unit_price}}</td>
+        <td style="text-align:right;">{{quotation.currency.symbol}} {{quotation.total}}</td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="4" style="text-align:right;">合计 / TOTAL</td>
+        <td style="text-align:right;">{{quotation.currency.symbol}} {{quotation.total}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">商务条款 / Commercial Terms</div>
+  <div class="terms">
+    <strong>贸易条款 / Incoterms:</strong> {{quotation.incoterms}}<br>
+    <strong>付款条款 / Payment Terms:</strong> {{quotation.payment_terms}}（如选 T/T 30/70：30% 定金签合同后支付，70% 尾款发货前付清）<br>
+    <strong>交期 / Lead Time:</strong> PP 样确认后 {{quotation.lead_time_days}} 天<br>
+    <strong>生产工厂 / Production Factory:</strong> {{quotation.production_factory.name}}<br>
+    <strong>报价有效期 / Validity:</strong> 至 {{quotation.valid_until}}<br>
+    <strong>包装 / Packaging:</strong> 标准出口纸箱包装；如需定制包装请另行确认
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">品质保证 / Quality Assurance</div>
+  <div class="terms">
+    <strong>QC 流程:</strong> 进料检验 → 首件确认 → 在线巡检 → AQL 2.5 抽检 → 100% 成品检 → X 线检针<br>
+    <strong>认证:</strong> ISO 9001 质量管理体系<br>
+    <strong>验厂支持:</strong> 接受客户/第三方验厂与第三方验货
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">备注 / Notes</div>
+  <div class="terms">{{quotation.notes}}</div>
+</div>
+
+<div class="signature">
+  <div class="signature-block">
+    <div class="signature-line">客户签字 / Customer Sign</div>
+  </div>
+  <div class="signature-block">
+    <div class="signature-line">Better Bags 授权代表 / Authorized Rep.</div>
+  </div>
+</div>
+
+<div class="footer">
+  Better Bags Myanmar · 自 2003 年以来专注箱包 OEM/ODM 制造 · This document is automatically generated by NocoCRM.
+</div>
+
+</body>
+</html>

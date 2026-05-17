@@ -33,12 +33,15 @@ nocoCRM-ClaudeCode/
 | **M2 客户获取与分类** | customers/contacts/lead_sources/A-B-C-D 分级 | ✅ **已实施** |
 | **M3 会议与沟通** | meetings/agenda templates | ✅ **已实施** |
 | **M4 首次沟通会议** | meeting_notes/company_assets/首次会议回写 | ✅ **已实施** |
-| M5 - M17 | 见 [tasks.md](./tasks.md) | 待续 |
+| **M5 会后跟进与报价** | inquiries/cost_estimates/完整度评分 | ✅ **已实施** |
+| **M6 报价与打样** | quotations/samples/工厂路由/交期校验/价格底线/打样高风险 | ✅ **已实施** |
+| M7 - M17 | 见 [tasks.md](./tasks.md) | 待续 |
 
 实施成果按里程碑拆分成独立插件：
 
 - M1/M2 → [`project/packages/plugins/@better-bags/plugin-nococrm-core/`](./project/packages/plugins/@better-bags/plugin-nococrm-core/)
 - M3/M4 → [`project/packages/plugins/@better-bags/plugin-nococrm-meetings/`](./project/packages/plugins/@better-bags/plugin-nococrm-meetings/)
+- M5/M6 → [`project/packages/plugins/@better-bags/plugin-nococrm-quotation/`](./project/packages/plugins/@better-bags/plugin-nococrm-quotation/)
 
 ## 快速启动
 

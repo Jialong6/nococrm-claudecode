@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>お問い合わせフォローアップ - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'Hiragino Sans','Yu Gothic UI',sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">{{customer.primary_contact}} 様</h2>
+
+  <p>先日のミーティングではありがとうございました。正確な見積をできるだけ早くご提示するため、下記の情報をご確認いただきたく、お願い申し上げます。</p>
+
+  <h3 style="color:#1565c0;">お問い合わせ情報</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:160px;">お問い合わせ番号</td><td style="padding:10px 14px;"><strong>{{inquiry.inquiry_no}}</strong></td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">商品カテゴリー</td><td style="padding:10px 14px;">{{inquiry.product_category.name_ja}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">数量</td><td style="padding:10px 14px;">{{inquiry.quantity}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">情報の完成度</td><td style="padding:10px 14px;">{{inquiry.completeness_score}} / 100</td></tr>
+  </table>
+
+  <h3 style="color:#1565c0;">追加でご確認をお願いしたい項目</h3>
+  <p>{{inquiry.notes}}</p>
+
+  <p style="background:#fff8e1;padding:12px 16px;border-left:3px solid #f57f17;">
+    <strong>ご参考</strong>：ミャンマー大量生産は MOQ 1,500 枚/型/色からとなります。
+    標準納期は PP サンプル承認から 90 日。急ぎ案件や試作には山東日照工場で 30 日からの納入も可能です。
+  </p>
+
+  <p style="margin-top:32px;">ご不明な点がございましたら、本メールへ直接ご返信ください。</p>
+
+  <p>
+    <strong>{{user.nickname}}</strong><br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">メール: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">このメールは NocoCRM から自動送信されています。</p>
+</body>
+</html>
