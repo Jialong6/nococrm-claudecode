@@ -1,0 +1,24 @@
+{
+  "name": "@better-bags/plugin-nococrm-meetings",
+  "displayName": "NocoCRM Meetings",
+  "displayName.zh-CN": "NocoCRM 会议与沟通",
+  "description": "Better Bags NocoCRM 会议管理（M3 会议与沟通 + M4 首次沟通会议）",
+  "description.zh-CN": "提供会议主表、议程模板、会议纪要、公司销售资料库。会议完成自动回写客户的首次会议时间与结果。",
+  "version": "0.1.0",
+  "main": "dist/server/index.js",
+  "homepage": "https://github.com/Jialong6/nococrm-claudecode",
+  "keywords": [
+    "CRM",
+    "NocoBase",
+    "Better Bags",
+    "Meetings"
+  ],
+  "peerDependencies": {
+    "@better-bags/plugin-nococrm-core": "0.x",
+    "@nocobase/client": "2.x",
+    "@nocobase/database": "2.x",
+    "@nocobase/server": "2.x",
+    "@nocobase/utils": "2.x"
+  },
+  "license": "AGPL-3.0"
+}

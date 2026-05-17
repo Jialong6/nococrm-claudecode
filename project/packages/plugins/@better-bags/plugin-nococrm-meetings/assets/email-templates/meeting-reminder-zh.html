@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>会议提醒 - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'PingFang SC','Microsoft YaHei',sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">📅 会议提醒</h2>
+
+  <p>您好 {{customer.primary_contact}}，</p>
+
+  <p>提醒您即将与 <strong>Better Bags</strong> 召开会议：</p>
+
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:120px;">会议主题</td><td style="padding:10px 14px;"><strong>{{meeting.meeting_no}}</strong></td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">客户</td><td style="padding:10px 14px;">{{customer.company_name}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">类型</td><td style="padding:10px 14px;">{{meeting.type}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">时间</td><td style="padding:10px 14px;"><strong>{{meeting.scheduled_at}}</strong>（{{meeting.timezone}}）</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">时长</td><td style="padding:10px 14px;">{{meeting.duration_min}} 分钟</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">会议链接</td><td style="padding:10px 14px;"><a href="{{meeting.meeting_link}}">{{meeting.meeting_link}}</a></td></tr>
+  </table>
+
+  <h3 style="color:#1565c0;">议程</h3>
+  <div style="white-space:pre-wrap;background:#fafafa;padding:12px 16px;border-left:3px solid #1565c0;">{{meeting.agenda}}</div>
+
+  <p style="margin-top:32px;">如需调整时间或议程，请直接回复此邮件。</p>
+
+  <p>
+    {{user.nickname}}<br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">邮箱: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">本邮件由 NocoCRM 自动发送。</p>
+</body>
+</html>

@@ -31,9 +31,14 @@ nocoCRM-ClaudeCode/
 | M0 环境准备 | NocoBase 安装与插件启用 | ⏳ 待执行 |
 | **M1 基础数据架构** | departments/factories/categories/dicts | ✅ **已实施** |
 | **M2 客户获取与分类** | customers/contacts/lead_sources/A-B-C-D 分级 | ✅ **已实施** |
-| M3 - M17 | 见 [tasks.md](./tasks.md) | 待续 |
+| **M3 会议与沟通** | meetings/agenda templates | ✅ **已实施** |
+| **M4 首次沟通会议** | meeting_notes/company_assets/首次会议回写 | ✅ **已实施** |
+| M5 - M17 | 见 [tasks.md](./tasks.md) | 待续 |
 
-M1/M2 实施成果在 [`project/packages/plugins/@better-bags/plugin-nococrm-core/`](./project/packages/plugins/@better-bags/plugin-nococrm-core/)。
+实施成果按里程碑拆分成独立插件：
+
+- M1/M2 → [`project/packages/plugins/@better-bags/plugin-nococrm-core/`](./project/packages/plugins/@better-bags/plugin-nococrm-core/)
+- M3/M4 → [`project/packages/plugins/@better-bags/plugin-nococrm-meetings/`](./project/packages/plugins/@better-bags/plugin-nococrm-meetings/)
 
 ## 快速启动
 

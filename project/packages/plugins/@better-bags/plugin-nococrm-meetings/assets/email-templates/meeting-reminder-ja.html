@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ミーティング・リマインダー - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'Hiragino Sans','Yu Gothic UI',sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">📅 ミーティング・リマインダー</h2>
+
+  <p>{{customer.primary_contact}} 様</p>
+
+  <p>このたびは <strong>Better Bags</strong> とのミーティングをご予約いただき、ありがとうございます。下記の通りリマインドさせていただきます。</p>
+
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:140px;">ミーティング番号</td><td style="padding:10px 14px;"><strong>{{meeting.meeting_no}}</strong></td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">お客様</td><td style="padding:10px 14px;">{{customer.company_name}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">種別</td><td style="padding:10px 14px;">{{meeting.type}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">日時</td><td style="padding:10px 14px;"><strong>{{meeting.scheduled_at}}</strong>（{{meeting.timezone}}）</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">所要時間</td><td style="padding:10px 14px;">{{meeting.duration_min}} 分</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">参加リンク</td><td style="padding:10px 14px;"><a href="{{meeting.meeting_link}}">{{meeting.meeting_link}}</a></td></tr>
+  </table>
+
+  <h3 style="color:#1565c0;">アジェンダ</h3>
+  <div style="white-space:pre-wrap;background:#fafafa;padding:12px 16px;border-left:3px solid #1565c0;">{{meeting.agenda}}</div>
+
+  <p style="margin-top:32px;">日程やアジェンダの変更をご希望の場合は、本メールへ直接ご返信ください。</p>
+
+  <p>
+    <strong>{{user.nickname}}</strong><br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">メール: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">このメールは NocoCRM から自動送信されています。</p>
+</body>
+</html>
