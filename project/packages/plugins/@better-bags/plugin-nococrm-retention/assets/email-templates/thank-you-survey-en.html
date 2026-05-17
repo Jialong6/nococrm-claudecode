@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thank You & Satisfaction Survey - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">Dear {{customer.primary_contact}},</h2>
+
+  <p>Order <strong>{{order.order_no}}</strong> was delivered two weeks ago. Thank you for trusting <strong>Better Bags</strong> on this project.</p>
+
+  <p>To keep improving our products and service, we kindly ask 2-3 minutes of your time to share feedback. Every comment is read seriously.</p>
+
+  <div style="text-align:center;margin:32px 0;">
+    <a href="{{survey_url}}" style="display:inline-block;background:#1565c0;color:#fff;padding:14px 32px;text-decoration:none;border-radius:6px;font-weight:bold;">Take the Survey (~3 min)</a>
+  </div>
+
+  <h3 style="color:#1565c0;">Order Summary</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:160px;">Order No.</td><td style="padding:10px 14px;"><strong>{{order.order_no}}</strong></td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">Product</td><td style="padding:10px 14px;">{{order.product_name}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">Quantity</td><td style="padding:10px 14px;">{{order.quantity}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">Delivered On</td><td style="padding:10px 14px;">{{shipment.delivered_at}}</td></tr>
+  </table>
+
+  <p style="background:#e3f2fd;padding:12px 16px;border-left:3px solid #1565c0;">
+    If you'd like to reorder, or have new categories/designs Better Bags can help develop, please reply directly to this email.
+  </p>
+
+  <p style="margin-top:32px;">
+    Best regards,<br>
+    <strong>{{user.nickname}}</strong><br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">Email: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">Automatically sent by NocoCRM.</p>
+</body>
+</html>

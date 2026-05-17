@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>感谢与满意度调研 - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'PingFang SC','Microsoft YaHei',sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">{{customer.primary_contact}}，您好</h2>
+
+  <p>订单 <strong>{{order.order_no}}</strong> 已交付两周。感谢您对 <strong>Better Bags</strong> 的信任与合作。</p>
+
+  <p>为了不断提升我们的产品与服务，恳请您花 2-3 分钟反馈本次合作的体验。您的每一条意见都会被认真对待。</p>
+
+  <div style="text-align:center;margin:32px 0;">
+    <a href="{{survey_url}}" style="display:inline-block;background:#1565c0;color:#fff;padding:14px 32px;text-decoration:none;border-radius:6px;font-weight:bold;">填写满意度调研（约 3 分钟）</a>
+  </div>
+
+  <h3 style="color:#1565c0;">本次订单摘要</h3>
+  <table style="border-collapse:collapse;margin:16px 0;width:100%;background:#f9fafc;border-radius:8px;">
+    <tr><td style="padding:10px 14px;color:#666;width:140px;">订单编号</td><td style="padding:10px 14px;"><strong>{{order.order_no}}</strong></td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">产品</td><td style="padding:10px 14px;">{{order.product_name}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">数量</td><td style="padding:10px 14px;">{{order.quantity}}</td></tr>
+    <tr><td style="padding:10px 14px;color:#666;">交付日期</td><td style="padding:10px 14px;">{{shipment.delivered_at}}</td></tr>
+  </table>
+
+  <p style="background:#e3f2fd;padding:12px 16px;border-left:3px solid #1565c0;">
+    如果您愿意复购，或有新品类、新设计需要 Better Bags 协助开发，欢迎直接回复此邮件。
+  </p>
+
+  <p style="margin-top:32px;">
+    {{user.nickname}}<br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">邮箱: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">本邮件由 NocoCRM 自动发送。</p>
+</body>
+</html>
