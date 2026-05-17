@@ -1,0 +1,226 @@
+/**
+ * T9.02 订单表 orders（9 状态机）
+ * Hooks（见 plugin.ts）：
+ *   - beforeCreate：customer / product_category / quantity / unit_price / production_factory 从 contract.quotation 同步
+ *   - beforeSave：缅甸路由 + quantity < 1500 → throw；缅甸大货 committed_delivery 校验
+ */
+
+import { defineCollection } from '@nocobase/database';
+
+export default defineCollection({
+  name: 'orders',
+  title: '订单',
+  shared: true,
+  sortable: true,
+  createdBy: true,
+  updatedBy: true,
+  logging: true,
+  fields: [
+    {
+      type: 'bigInt',
+      name: 'id',
+      primaryKey: true,
+      autoIncrement: true,
+      interface: 'integer',
+    },
+    {
+      type: 'sequence',
+      name: 'order_no',
+      patterns: [
+        { type: 'string', options: { value: 'PO-' } },
+        { type: 'date', options: { format: 'YYYYMMDD' } },
+        { type: 'string', options: { value: '-' } },
+        { type: 'integer', options: { digits: 3, start: 1 } },
+      ],
+      interface: 'sequence',
+      uiSchema: { type: 'string', title: '订单编号', 'x-component': 'Input', 'x-read-pretty': true },
+    },
+    {
+      type: 'belongsTo',
+      name: 'contract',
+      target: 'contracts',
+      foreignKey: 'contract_id',
+      interface: 'm2o',
+      uiSchema: {
+        type: 'object',
+        title: '合同',
+        'x-component': 'AssociationField',
+        'x-component-props': { fieldNames: { label: 'contract_no', value: 'id' } },
+        required: true,
+      },
+    },
+    {
+      type: 'belongsTo',
+      name: 'customer',
+      target: 'customers',
+      foreignKey: 'customer_id',
+      interface: 'm2o',
+      uiSchema: {
+        type: 'object',
+        title: '客户',
+        'x-component': 'AssociationField',
+        'x-component-props': { fieldNames: { label: 'company_name', value: 'id' } },
+        description: '从 contract 自动同步',
+      },
+    },
+    {
+      type: 'string',
+      name: 'customer_po_no',
+      interface: 'input',
+      uiSchema: {
+        type: 'string',
+        title: '客户 PO 号',
+        'x-component': 'Input',
+        description: '客户自带的 PO 号，与系统 order_no 区分',
+      },
+    },
+    {
+      type: 'attachment',
+      name: 'po_file',
+      interface: 'attachment',
+      uiSchema: { type: 'array', title: '客户 PO 扫描件', 'x-component': 'Upload.Attachment' },
+    },
+    {
+      type: 'belongsTo',
+      name: 'product_category',
+      target: 'product_categories',
+      foreignKey: 'product_category_id',
+      interface: 'm2o',
+      uiSchema: { type: 'object', title: '产品分类', 'x-component': 'AssociationField' },
+    },
+    {
+      type: 'string',
+      name: 'product_name',
+      interface: 'input',
+      uiSchema: { type: 'string', title: '产品名', 'x-component': 'Input' },
+    },
+    {
+      type: 'integer',
+      name: 'quantity',
+      interface: 'integer',
+      uiSchema: {
+        type: 'number',
+        title: '数量',
+        'x-component': 'InputNumber',
+        'x-component-props': { min: 1 },
+        description: '缅甸大货 MOQ ≥ 1500',
+      },
+    },
+    {
+      type: 'decimal',
+      name: 'unit_price',
+      interface: 'number',
+      uiSchema: { type: 'number', title: '单价', 'x-component': 'InputNumber', 'x-component-props': { precision: 2, min: 0 } },
+    },
+    {
+      type: 'formula',
+      name: 'total',
+      dataType: 'decimal',
+      expression: 'unit_price * quantity',
+      interface: 'formula',
+      uiSchema: { type: 'number', title: '总金额', 'x-component': 'InputNumber', 'x-read-pretty': true },
+    },
+    {
+      type: 'belongsTo',
+      name: 'production_factory',
+      target: 'factories',
+      foreignKey: 'production_factory_id',
+      interface: 'm2o',
+      uiSchema: {
+        type: 'object',
+        title: '生产工厂',
+        'x-component': 'AssociationField',
+        description: '从 contract.quotation 自动同步；缅甸路由强制 MOQ ≥ 1500',
+      },
+    },
+    {
+      type: 'date',
+      name: 'pp_sample_approved_at',
+      interface: 'datetime',
+      uiSchema: {
+        type: 'string',
+        title: '产前样确认日',
+        'x-component': 'DatePicker',
+        'x-component-props': { showTime: false },
+        description: '大货交期从此日起算（≥ 90 天）',
+      },
+    },
+    {
+      type: 'date',
+      name: 'requested_delivery',
+      interface: 'datetime',
+      uiSchema: {
+        type: 'string',
+        title: '客户要求交期',
+        'x-component': 'DatePicker',
+        'x-component-props': { showTime: false },
+      },
+    },
+    {
+      type: 'date',
+      name: 'committed_delivery',
+      interface: 'datetime',
+      uiSchema: {
+        type: 'string',
+        title: '我方承诺交期',
+        'x-component': 'DatePicker',
+        'x-component-props': { showTime: false },
+        description: '缅甸大货须 ≥ pp_sample_approved_at + 90 天',
+      },
+    },
+    {
+      type: 'string',
+      name: 'status',
+      defaultValue: 'deposit_pending',
+      interface: 'radioGroup',
+      uiSchema: {
+        type: 'string',
+        title: '状态',
+        'x-component': 'Radio.Group',
+        enum: [
+          { value: 'deposit_pending', label: '待付定金', color: 'default' },
+          { value: 'production_pending', label: '待生产', color: 'cyan' },
+          { value: 'in_production', label: '生产中', color: 'gold' },
+          { value: 'qc_pending', label: '待质检', color: 'orange' },
+          { value: 'completed', label: '已完成', color: 'green' },
+          { value: 'shipping_pending', label: '待发货', color: 'blue' },
+          { value: 'shipped', label: '已发货', color: 'purple' },
+          { value: 'delivered', label: '已交付', color: 'lime' },
+          { value: 'cancelled', label: '已取消', color: 'red' },
+        ],
+      },
+    },
+    {
+      type: 'boolean',
+      name: 'deposit_paid',
+      defaultValue: false,
+      interface: 'checkbox',
+      uiSchema: {
+        type: 'boolean',
+        title: '定金已付',
+        'x-component': 'Checkbox',
+        'x-read-pretty': true,
+        description: 'hook 维护：定金 payment.status = paid 时自动标 true',
+      },
+    },
+    {
+      type: 'boolean',
+      name: 'balance_paid',
+      defaultValue: false,
+      interface: 'checkbox',
+      uiSchema: {
+        type: 'boolean',
+        title: '尾款已付',
+        'x-component': 'Checkbox',
+        'x-read-pretty': true,
+        description: 'hook 维护：尾款 payment.status = paid 时自动标 true',
+      },
+    },
+    {
+      type: 'text',
+      name: 'notes',
+      interface: 'textarea',
+      uiSchema: { type: 'string', title: '备注', 'x-component': 'Input.TextArea' },
+    },
+  ],
+});

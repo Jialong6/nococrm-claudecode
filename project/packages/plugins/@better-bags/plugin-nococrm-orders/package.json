@@ -1,0 +1,26 @@
+{
+  "name": "@better-bags/plugin-nococrm-orders",
+  "displayName": "NocoCRM Orders & Production",
+  "displayName.zh-CN": "NocoCRM 订单与生产准备",
+  "description": "Better Bags NocoCRM 订单确认 + 生产准备（M9 + M10）",
+  "description.zh-CN": "提供合同、订单、付款、物料、排产 5 张主表。Hooks 自动化：签合同 → 自动建单 + 收定金；定金到账 → 解锁订单 + 创建尾款 + 排产；物料齐套时间轴自动计算（14+7+14 天）。",
+  "version": "0.1.0",
+  "main": "dist/server/index.js",
+  "homepage": "https://github.com/Jialong6/nococrm-claudecode",
+  "keywords": [
+    "CRM",
+    "NocoBase",
+    "Better Bags",
+    "Orders",
+    "Production"
+  ],
+  "peerDependencies": {
+    "@better-bags/plugin-nococrm-core": "0.x",
+    "@better-bags/plugin-nococrm-quotation": "0.x",
+    "@nocobase/client": "2.x",
+    "@nocobase/database": "2.x",
+    "@nocobase/server": "2.x",
+    "@nocobase/utils": "2.x"
+  },
+  "license": "AGPL-3.0"
+}
