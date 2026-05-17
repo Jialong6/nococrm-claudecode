@@ -1,0 +1,12 @@
+{
+  "NocoCRM ACL": "NocoCRM 权限与角色",
+  "Admin": "超级管理员",
+  "Sales Manager": "销售经理",
+  "Sales": "业务员",
+  "Finance": "财务",
+  "Factory Shandong": "山东工厂",
+  "Factory Yangon": "缅甸工厂",
+  "QC": "质检",
+  "Procurement": "采购",
+  "Readonly": "只读"
+}

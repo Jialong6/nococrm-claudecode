@@ -1,0 +1,19 @@
+{
+  "name": "@better-bags/plugin-nococrm-reports",
+  "displayName": "NocoCRM Reports",
+  "displayName.zh-CN": "NocoCRM 报表与可视化",
+  "description": "Better Bags NocoCRM 7 个报表聚合 action（M16）",
+  "description.zh-CN": "提供 7 个后端聚合 action：13 阶段漏斗 / 销售业绩 / 工厂产能 / 打样转化 / 阶段停留 / 分级分布 / 现金流。UI 中 chart block 可直接调用。",
+  "version": "0.1.0",
+  "main": "dist/server/index.js",
+  "homepage": "https://github.com/Jialong6/nococrm-claudecode",
+  "keywords": ["CRM", "NocoBase", "Better Bags", "Reports", "Dashboard"],
+  "peerDependencies": {
+    "@better-bags/plugin-nococrm-core": "0.x",
+    "@better-bags/plugin-nococrm-orders": "0.x",
+    "@better-bags/plugin-nococrm-quotation": "0.x",
+    "@nocobase/client": "2.x",
+    "@nocobase/server": "2.x"
+  },
+  "license": "AGPL-3.0"
+}
