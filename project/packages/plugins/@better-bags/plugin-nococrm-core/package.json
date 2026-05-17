@@ -1,0 +1,23 @@
+{
+  "name": "@better-bags/plugin-nococrm-core",
+  "displayName": "NocoCRM Core",
+  "displayName.zh-CN": "NocoCRM 核心",
+  "description": "Better Bags NocoCRM 基础数据与客户管理（M1/M2 实施）",
+  "description.zh-CN": "提供工厂、产品分类、地区/币种字典、来源、客户、联系人等基础表，并预置 Better Bags 双工厂业务数据。",
+  "version": "0.1.0",
+  "main": "dist/server/index.js",
+  "homepage": "https://github.com/better-bags/nococrm",
+  "keywords": [
+    "CRM",
+    "NocoBase",
+    "Better Bags"
+  ],
+  "peerDependencies": {
+    "@nocobase/client": "2.x",
+    "@nocobase/database": "2.x",
+    "@nocobase/server": "2.x",
+    "@nocobase/test": "2.x",
+    "@nocobase/utils": "2.x"
+  },
+  "license": "AGPL-3.0"
+}

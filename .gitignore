@@ -1,0 +1,69 @@
+# macOS / 编辑器
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*~
+
+# Claude Code 本地配置（每位开发者私有）
+.claude/settings.local.json
+
+# Node / yarn
+node_modules/
+.yarn/cache
+.yarn/install-state.gz
+.yarn/build-state.yml
+.yarn/unplugged
+.yarn/sdks
+.yarn/versions
+
+# 构建产物
+dist/
+build/
+*.tsbuildinfo
+.next/
+.turbo/
+
+# 测试与覆盖率
+coverage/
+.nyc_output/
+*.lcov
+
+# 日志
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 环境变量与本地配置（含 secrets）
+.env
+.env.local
+.env.*.local
+project/.env
+project/.env.local
+project/.env.*.local
+!project/.env.example
+!project/.env.test.example
+!project/.env.e2e.example
+!project/.env.perf.example
+
+# NocoBase 运行时
+project/storage/uploads/
+project/storage/plugins/
+project/storage/tmp/
+project/storage/cache/
+project/storage/logs/
+project/storage/backups/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 编辑器自动备份
+*.bak
+*.orig

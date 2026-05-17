@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thank you for your inquiry - Better Bags</title>
+</head>
+<body style="font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; max-width: 640px; margin: 0 auto; color: #222;">
+  <h2 style="color:#1565c0;">Dear {{customer.primary_contact}},</h2>
+
+  <p>Thank you for reaching out to <strong>Better Bags</strong>. We have received your inquiry and will get back to you within <strong>4 hours</strong> during our business hours (9:00 - 18:00 Beijing Time, Mon-Fri).</p>
+
+  <p>If your message was sent outside business hours, you will receive a detailed reply by the morning of the next working day.</p>
+
+  <h3 style="color:#1565c0;">About Us</h3>
+  <ul>
+    <li>Established in <strong>2003</strong>, 20+ years of OEM/ODM bag manufacturing</li>
+    <li>Dual-factory layout: <strong>Rizhao, Shandong, China</strong> (~100 sewing workers) and <strong>Yangon, Myanmar</strong> (~370 sewing workers)</li>
+    <li>Focused on the Japanese market, working with multiple brands with strict quality and delivery control</li>
+    <li>OEM / ODM / pure CMT / partial material sourcing all supported</li>
+  </ul>
+
+  <h3 style="color:#1565c0;">Next Steps</h3>
+  <p>To speed up the first quotation, please prepare the following if available:</p>
+  <ol>
+    <li>Design sketches or sample photos</li>
+    <li>Estimated quantity, preferred materials, target price</li>
+    <li>Expected delivery date and destination port</li>
+  </ol>
+
+  <p style="margin-top: 32px;">
+    Best regards,<br>
+    <strong>{{user.nickname}}</strong><br>
+    <span style="color:#666;">{{user.job_title}} · Better Bags</span><br>
+    <span style="color:#666;">Email: {{user.email}}</span>
+  </p>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+  <p style="font-size:12px;color:#999;">This email is automatically sent by NocoCRM. Please reply directly for any questions.</p>
+</body>
+</html>
