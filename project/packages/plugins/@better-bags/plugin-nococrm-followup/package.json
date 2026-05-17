@@ -1,0 +1,26 @@
+{
+  "name": "@better-bags/plugin-nococrm-followup",
+  "displayName": "NocoCRM Followup",
+  "displayName.zh-CN": "NocoCRM 跟进与谈判",
+  "description": "Better Bags NocoCRM 信任建立、跟进与合同谈判（M7 + M8）",
+  "description.zh-CN": "提供跟进话术模板、谈判记录、谈判话术库；扩展 quotations 增加跟进截止字段；hooks 自动计算 14 天跟进截止与谈判轮次止损。",
+  "version": "0.1.0",
+  "main": "dist/server/index.js",
+  "homepage": "https://github.com/Jialong6/nococrm-claudecode",
+  "keywords": [
+    "CRM",
+    "NocoBase",
+    "Better Bags",
+    "Followup",
+    "Negotiation"
+  ],
+  "peerDependencies": {
+    "@better-bags/plugin-nococrm-core": "0.x",
+    "@better-bags/plugin-nococrm-quotation": "0.x",
+    "@nocobase/client": "2.x",
+    "@nocobase/database": "2.x",
+    "@nocobase/server": "2.x",
+    "@nocobase/utils": "2.x"
+  },
+  "license": "AGPL-3.0"
+}

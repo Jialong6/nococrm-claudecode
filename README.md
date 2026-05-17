@@ -35,13 +35,16 @@ nocoCRM-ClaudeCode/
 | **M4 首次沟通会议** | meeting_notes/company_assets/首次会议回写 | ✅ **已实施** |
 | **M5 会后跟进与报价** | inquiries/cost_estimates/完整度评分 | ✅ **已实施** |
 | **M6 报价与打样** | quotations/samples/工厂路由/交期校验/价格底线/打样高风险 | ✅ **已实施** |
-| M7 - M17 | 见 [tasks.md](./tasks.md) | 待续 |
+| **M7 信任建立与跟进** | followup_scripts/quotations.followup_due_at/14 天跟进截止 | ✅ **已实施** |
+| **M8 合同谈判** | negotiations/negotiation_scripts/谈判轮次 ≥ 5 止损 | ✅ **已实施** |
+| M9 - M17 | 见 [tasks.md](./tasks.md) | 待续 |
 
 实施成果按里程碑拆分成独立插件：
 
 - M1/M2 → [`project/packages/plugins/@better-bags/plugin-nococrm-core/`](./project/packages/plugins/@better-bags/plugin-nococrm-core/)
 - M3/M4 → [`project/packages/plugins/@better-bags/plugin-nococrm-meetings/`](./project/packages/plugins/@better-bags/plugin-nococrm-meetings/)
 - M5/M6 → [`project/packages/plugins/@better-bags/plugin-nococrm-quotation/`](./project/packages/plugins/@better-bags/plugin-nococrm-quotation/)
+- M7/M8 → [`project/packages/plugins/@better-bags/plugin-nococrm-followup/`](./project/packages/plugins/@better-bags/plugin-nococrm-followup/)
 
 ## 快速启动
 
