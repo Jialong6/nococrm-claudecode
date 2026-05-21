@@ -45,9 +45,9 @@ nocoCRM-ClaudeCode/
 | **M14 长期关系维护** | long_term_followups/customers.last_order_at/新询盘回流 | ✅ **已实施** |
 | **M15 权限与 ACL** | 9 角色（admin/sales_manager/sales/finance/factory_qd/factory_ygn/qc/procurement/readonly）+ 4 类数据隔离 | ✅ **已实施** |
 | **M16 看板/漏斗/报表** | 7 个聚合 action（漏斗/销售业绩/工厂产能/打样转化/阶段停留/分级分布/现金流） | ✅ **已实施** |
-| M17 | 验收与上线 | 待续 |
+| **M17 验收与上线** | deploy/（Docker+Nginx+备份）+ docs/（培训手册+验收+runbook）+ plugin-nococrm-ops 告警 | ✅ **已实施** |
 
-**🎉 SOP 13 阶段 + 全局横向 M15/M16 全部实施完成（M0-M16 / 16 个里程碑）**
+**🎉 全部 17 个里程碑实施完成（M0-M17）—— SOP 13 阶段 + 全局横向 ACL/报表 + 部署运维全链路交付**
 
 实施成果按里程碑拆分成独立插件：
 
@@ -60,6 +60,7 @@ nocoCRM-ClaudeCode/
 - M13/M14 → [`project/packages/plugins/@better-bags/plugin-nococrm-retention/`](./project/packages/plugins/@better-bags/plugin-nococrm-retention/)
 - M15 → [`project/packages/plugins/@better-bags/plugin-nococrm-acl/`](./project/packages/plugins/@better-bags/plugin-nococrm-acl/)
 - M16 → [`project/packages/plugins/@better-bags/plugin-nococrm-reports/`](./project/packages/plugins/@better-bags/plugin-nococrm-reports/)
+- M17 → [`plugin-nococrm-ops`](./project/packages/plugins/@better-bags/plugin-nococrm-ops/) + [`deploy/`](./deploy/) + [`docs/`](./docs/)
 
 ## 快速启动
 

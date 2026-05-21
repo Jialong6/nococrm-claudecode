@@ -1,0 +1,16 @@
+{
+  "name": "@better-bags/plugin-nococrm-ops",
+  "displayName": "NocoCRM Ops & Alerts",
+  "displayName.zh-CN": "NocoCRM 运维与告警",
+  "description": "Better Bags NocoCRM 监控告警（M17 T17.06）",
+  "description.zh-CN": "统一告警渠道（站内信 / 邮件 / webhook），监听工作流失败、邮件失败、数据库异常、备份失败，附 ops:sendAlert / ops:testAlert action。",
+  "version": "0.1.0",
+  "main": "dist/server/index.js",
+  "homepage": "https://github.com/Jialong6/nococrm-claudecode",
+  "keywords": ["CRM", "NocoBase", "Better Bags", "Ops", "Alert", "Monitoring"],
+  "peerDependencies": {
+    "@nocobase/client": "2.x",
+    "@nocobase/server": "2.x"
+  },
+  "license": "AGPL-3.0"
+}

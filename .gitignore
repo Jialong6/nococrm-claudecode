@@ -51,6 +51,12 @@ project/.env.*.local
 !project/.env.e2e.example
 !project/.env.perf.example
 
+# 生产部署敏感文件（M17）
+deploy/.env.production
+deploy/nginx/certbot-www/
+deploy/nginx/*.pem
+!deploy/.env.production.example
+
 # NocoBase 运行时
 project/storage/uploads/
 project/storage/plugins/
